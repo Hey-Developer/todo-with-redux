@@ -1,0 +1,46 @@
+Basically our app is todo App:
+So main Function of APP is:
+> Add a todo
+> Toggle a todo, i.e completed or not
+> Delete a todo
+> Todo Filter i.e show todo according to todo completed or not (SHOW_ALL, COMPLETED, NOT_COMPLETED)
+
+So according to the redux these functions are our ACTIONS:
+let's create action types:
+-- ADD_TODO
+-- TOGGLE_TODO
+-- DELETE_TODO
+-- SET_VISIBILITY_FILTER
+
+hence our action creators are:
+addTodo(text)
+toggleTodo(index)
+deleteTodo(index)
+setVisibilityFilter(filter)
+
+Now we have to store all this data in a central place so that all our component can get the data that why we use redux logic here..
+$ Our Global Application state will be like this..
+const initialState ={
+    visibilityFilter: "SHOW_ALL", // will contain the mode of the filter
+    todo: [
+        {
+            todoContent:  "Text",
+            completed: false,
+        }
+    ] //  this will be an array of object..each object will show each todo
+}
+
+Now we will make reducer functions so that we can conatct to store if wanna update something-->
+>> Now there are two approaches:
+~ One is to create a single reducer function and then inside it different action.types under switch case...
+and the second option is..
+~ IS to create a single reducer function for every action.. that is multiple reducer and then combine theme using redux method combineReducer()
+
+I think the second way is much better so let's go with the second approach..
+
+Now as our reducers our ready
+hence we will create store..OK
+
+now we need to create UI using react so that we interact with the store and dispatch actions on click..
+
+$ USAGE_WITH_REACT  
